@@ -1,0 +1,52 @@
+[
+  {
+    "pergunta": "cdb",
+    "resposta_base": "CDB (Certificado de Depósito Bancário) é um título emitido por bancos para captar recursos. Em termos simples, você empresta dinheiro ao banco e recebe de volta com juros após um período. É protegido pelo FGC até R$ 250 mil por instituição.",
+    "palavras_chave": ["cdb", "certificado", "banco", "renda fixa"]
+  },
+  {
+    "pergunta": "selic",
+    "resposta_base": "A Selic é a taxa básica de juros da economia brasileira, definida pelo Banco Central. Ela influencia todos os outros juros do país (empréstimos, investimentos). Quando a Selic sobe, o crédito fica mais caro, mas investimentos em renda fixa rendem mais.",
+    "palavras_chave": ["selic", "juros", "taxa", "banco central"]
+  },
+  {
+    "pergunta": "inflacao",
+    "resposta_base": "Inflação é o aumento generalizado de preços ao longo do tempo. Ela mede quanto o poder de compra diminui. Se a inflação é 5% ao ano, um produto que custa R$ 100 hoje custará R$ 105 no próximo ano. Para proteger seu dinheiro, você precisa de investimentos que rendam mais que a inflação.",
+    "palavras_chave": ["inflacao", "precos", "aumento", "poder de compra"]
+  },
+  {
+    "pergunta": "reserva emergencia",
+    "resposta_base": "Reserva de emergência é um dinheiro guardado para imprevistos (perda de emprego, saúde, reparos). Especialistas recomendam guardar de 3 a 6 meses de gastos fixos. Deve estar em investimento com liquidez imediata e baixo risco, como CDB de liquidez diária ou conta remunerada.",
+    "palavras_chave": ["reserva", "emergencia", "imprevistos", "poupanca"]
+  },
+  {
+    "pergunta": "juros compostos",
+    "resposta_base": "Juros compostos são 'juros sobre juros'. Diferente dos juros simples, onde você ganha apenas sobre o valor inicial, nos juros compostos os juros são incorporados ao capital e rendem mais juros. É como uma bola de neve: quanto mais tempo deixa rolando, maior fica. Exemplo: R$ 100 a 10% ao ano = R$ 110 no 1º ano, R$ 121 no 2º ano (10% sobre 110, não 100).",
+    "palavras_chave": ["juros", "compostos", "rendimento", "investimento"]
+  },
+  {
+    "pergunta": "divida",
+    "resposta_base": "Dívida é quando você deve dinheiro a alguém. As dívidas mais perigosas são as com juros altos (cartão de crédito, cheque especial). Estratégia comum para sair das dívidas: 1) Liste todas as dívidas com juros; 2) Pague primeiro as com juros mais altos (método avalanche) ou as menores primeiro para motivação (méteto bola de neve); 3) Negocie com credores; 4) Evite novas dívidas.",
+    "palavras_chave": ["divida", "devendo", "pagar", "crediario"]
+  },
+  {
+    "pergunta": "lci lca",
+    "resposta_base": "LCI (Letra de Crédito Imobiliário) e LCA (Letra de Crédito do Agronegócio) são investimentos de renda fixa emitidos por bancos para financiar setores imobiliário e agrícola. São isentas de Imposto de Renda para pessoas físicas, o que pode torná-las mais atraentes que CDBs. Possuem proteção do FGC até R$ 250 mil.",
+    "palavras_chave": ["lci", "lca", "imobiliario", "agronegocio"]
+  },
+  {
+    "pergunta": "tesouro direto",
+    "resposta_base": "Tesouro Direto é um programa do governo federal onde você empresta dinheiro ao Estado em troca de juros. É considerado um dos investimentos mais seguros do país. Existem vários tipos: Selic (rende a taxa básica), IPCA+ (rende inflação mais juros fixos), Prefixado (juros fixos). Ideal para longo prazo e diversificação.",
+    "palavras_chave": ["tesouro", "governo", "titulo", "publico"]
+  },
+  {
+    "pergunta": "fgc",
+    "resposta_base": "FGC (Fundo Garantidor de Créditos) é uma associação que protege investidores em caso de liquidação de instituição financeira. Garante até R$ 250 mil por CPF por instituição financeira, limitado a R$ 1 milhão a cada 4 anos. Protege CDBs, LCIs, LCAs, poupança e outros produtos.",
+    "palavras_chave": ["fgc", "garantia", "protecao", "seguro"]
+  },
+  {
+    "pergunta": "diversificar",
+    "resposta_base": "Diversificar é distribuir seus investimentos em diferentes tipos (renda fixa, variável, imobiliário, internacional) para reduzir riscos. O princípio é: não coloque todos os ovos na mesma cesta. Se um investimento performa mal, outros podem compensar. A diversificação ideal depende do seu perfil e objetivos.",
+    "palavras_chave": ["diversificar", "distribuir", "risco", "variedade"]
+  }
+]
