@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(sleep 5 && curl -s http://localhost:8501/_stcore/health && echo \" - ✅ Nat está rodando!\")"
-    ]
-  }
-}
