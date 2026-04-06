@@ -74,9 +74,6 @@ cp .env.example .env
 ```bash
 streamlit run app.py
 ```
-
-A aplicação estará disponível em: **http://localhost:8501**
-
 ---
 
 ## 📁 Estrutura do Projeto
