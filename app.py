@@ -218,7 +218,7 @@ def perfil_financeiro():
             help="Valor total que você recebe por mês (salário, rendas extras, etc.)"
         )
 
-        if renda > 0:
+        if renda is not None and renda > 0:
             atualizar_perfil("renda_mensal", renda)
 
     with col2:
@@ -233,7 +233,7 @@ def perfil_financeiro():
             help="Aluguel, contas, alimentação básica, transporte, etc."
         )
 
-        if gastos_fixos > 0:
+        if gastos_fixos is not None and gastos_fixos > 0:
             atualizar_perfil("gastos_fixos", gastos_fixos)
 
     with col3:
@@ -248,7 +248,7 @@ def perfil_financeiro():
             help="Lazer, compras extras, restaurantes, etc."
         )
 
-        if gastos_variaveis > 0:
+        if gastos_variaveis is not None and gastos_variaveis > 0:
             atualizar_perfil("gastos_variaveis", gastos_variaveis)
 
     with col4:
@@ -263,7 +263,7 @@ def perfil_financeiro():
             help="Sua idade atual ajuda a Nat a personalizar planejamentos de longo prazo"
         )
 
-        if idade > 0:
+        if idade is not None and idade > 0:
             atualizar_perfil("idade", idade)
 
     # Botão para salvar
@@ -285,7 +285,7 @@ def perfil_financeiro():
 
     perfil = obter_perfil()
 
-    if perfil.get("renda_mensal") and perfil.get("gastos_fixos") is not None:
+    if perfil.get("renda_mensal") is not None and perfil.get("gastos_fixos") is not None:
         renda = perfil["renda_mensal"]
         gastos_fixos = perfil.get("gastos_fixos", 0)
         gastos_variaveis = perfil.get("gastos_variaveis", 0)
@@ -319,7 +319,7 @@ def perfil_financeiro():
         st.markdown(f"**💡 Dica da Nat:** {dica}")
 
         # Informação adicional se idade foi fornecida
-        if perfil.get("idade") and sobra > 0:
+        if perfil.get("idade") and sobra is not None and sobra > 0:
             anos_para_aposentadoria = max(0, 65 - perfil["idade"])
             if anos_para_aposentadoria > 0:
                 total_poupado = sobra * 12 * anos_para_aposentadoria
@@ -543,7 +543,7 @@ def simuladores_financeiros():
             taxa_mensal = (taxa_retorno / 100) / 12
 
             # Calcula poupança mensal necessária
-            if taxa_mensal > 0:
+            if taxa_mensal is not None and taxa_mensal > 0:
                 poupanca_mensal = patrimonio_necessario / (((1 + taxa_mensal) ** meses_poupar - 1) / taxa_mensal)
             else:
                 poupanca_mensal = patrimonio_necessario / meses_poupar
