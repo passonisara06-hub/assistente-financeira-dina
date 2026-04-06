@@ -1,5 +1,5 @@
 """
-Nat - Assistente de Finanças
+Dina - Assistente Financeira Estratégica
 Interface principal usando Streamlit
 Atualizado com DeepSeek, Perfil Financeiro e Chat Interativo
 """
@@ -26,8 +26,8 @@ load_dotenv()
 
 # Configuração da página
 st.set_page_config(
-    page_title="Nat - Assistente de Finanças",
-    page_icon="🧡",
+    page_title="Dina - Sua Estrategista Financeira",
+    page_icon="⚔️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -79,7 +79,7 @@ st.markdown("""
 
     .assistant-message {
         background-color: #f5f5f5;
-        border-left: 4px solid #ff9800;
+        border-left: 4px solid #ff5722;
     }
 
     /* Valores monetários em azul (acessível para daltônicos) */
@@ -104,8 +104,8 @@ st.markdown("""
         color: #1E88E5;
     }
 
-    /* Rodapé da Nat */
-    .nat-footer {
+    /* Rodapé da Dina */
+    .dina-footer {
         text-align: center;
         padding: 2rem;
         color: #666;
@@ -121,17 +121,17 @@ def main():
     # Inicializa perfil
     inicializar_perfil()
 
-    # Header da Nat
+    # Header da Dina
     st.markdown("""
     <div class="main-header">
-        <h1>🧡 Nat - Assistente de Finanças</h1>
-        <p>Sua assistente virtual para metas financeiras e educação financeira | Powered by DeepSeek</p>
+        <h1>⚔️ Dina - Sua Estrategista Financeira</h1>
+        <p>Sua aliada estratégica para conquistar seus objetivos financeiros | Powered by DeepSeek</p>
     </div>
     """, unsafe_allow_html=True)
 
     # Sidebar com informações do perfil
     with st.sidebar:
-        st.header("📊 Meu Perfil")
+        st.header("📊 Seu Planejamento")
 
         perfil = obter_perfil()
 
@@ -147,30 +147,30 @@ def main():
         st.divider()
 
         # Botão para carregar perfil salvo
-        if st.button("📂 Carregar Perfil Salvo", use_container_width=True):
+        if st.button("📂 Carregar Planejamento Salvo", use_container_width=True):
             if carregar_perfil_json():
-                st.success("Perfil carregado com sucesso!")
+                st.success("Planejamento carregado com sucesso!")
                 st.rerun()
             else:
-                st.info("Nenhum perfil salvo encontrado.")
+                st.info("Nenhum planejamento salvo encontrado.")
 
         # Botão para limpar perfil
-        if st.button("🗑️ Limpar Perfil", use_container_width=True):
+        if st.button("🗑️ Limpar Planejamento", use_container_width=True):
             limpar_perfil()
-            st.success("Perfil limpo!")
+            st.success("Planejamento limpo!")
             st.rerun()
 
-        # Rodapé da Nat na sidebar
+        # Rodapé da Dina na sidebar
         st.divider()
         st.markdown("---")
-        st.markdown("### 🧡 Sua assistente virtual, **Nat**")
-        st.caption("Educação financeira com simplicidade e segurança")
+        st.markdown("### ⚔️ **Dina**")
+        st.caption("Estratégia e disciplina para suas finanças")
 
     # Tabs principais
     tab1, tab2, tab3, tab4 = st.tabs([
-        "👤 Meu Perfil Financeiro",
-        "📚 Simuladores Financeiros",
-        "💬 Converse com a Nat",
+        "👤 Meu Planejamento Financeiro",
+        "⚔️ Simuladores Estratégicos",
+        "💬 Converse com a Dina",
         "❓ FAQ Inteligente"
     ])
 
@@ -181,15 +181,15 @@ def main():
         simuladores_financeiros()
 
     with tab3:
-        chat_com_nat()
+        chat_com_dina()
 
     with tab4:
         faq_inteligente()
 
     # Rodapé
     st.markdown("""
-    <div class="nat-footer">
-        <p>🧡 <strong>Nat</strong> - Assistente de Finanças | Desenvolvido com 💜 para educação financeira</p>
+    <div class="dina-footer">
+        <p>⚔️ <strong>Dina</strong> - Sua Estrategista Financeira | Disciplina e resiliência para sua vitória financeira</p>
         <p><em>Lembre-se: As informações fornecidas são apenas educativas. Consulte um profissional para decisões financeiras importantes.</em></p>
     </div>
     """, unsafe_allow_html=True)
@@ -197,11 +197,12 @@ def main():
 
 def perfil_financeiro():
     """Aba de gerenciamento do perfil financeiro"""
-    st.header("👤 Meu Perfil Financeiro")
+    st.header("👤 Meu Planejamento Financeiro")
 
     st.markdown("""
-    Preencha seus dados financeiros para receber recomendações personalizadas da Nat.
-    Esses dados ficam salvos durante a sessão e ajudam a contextualizar as respostas da IA.
+    **Estratégia começa com clareza.** Preencha seus dados financeiros para que eu possa traçar
+    o melhor plano de ação para você. Essas informações ficam salvas durante a sessão e ajudam
+    a personalizar as orientações estratégicas.
     """)
 
     col1, col2, col3, col4 = st.columns(4)
@@ -260,7 +261,7 @@ def perfil_financeiro():
             max_value=120,
             step=1,
             value=obter_perfil().get("idade", 0),
-            help="Sua idade atual ajuda a Nat a personalizar planejamentos de longo prazo"
+            help="Sua idade atual é crucial para o planejamento estratégico de longo prazo"
         )
 
         if idade is not None and idade > 0:
@@ -270,14 +271,14 @@ def perfil_financeiro():
     col_a, col_b, col_c = st.columns([1, 1, 2])
 
     with col_a:
-        if st.button("💾 Salvar Perfil", type="primary", use_container_width=True):
+        if st.button("💾 Salvar Planejamento", type="primary", use_container_width=True):
             if salvar_perfil_json():
-                st.success("Perfil salvo com sucesso!")
+                st.success("Planejamento salvo com sucesso!")
             else:
-                st.error("Erro ao salvar perfil.")
+                st.error("Erro ao salvar planejamento.")
 
     with col_b:
-        if st.button("🔄 Recalcular", use_container_width=True):
+        if st.button("🔄 Recalcular Estratégia", use_container_width=True):
             st.rerun()
 
     # Exibe resultados
@@ -292,7 +293,7 @@ def perfil_financeiro():
         total_gastos = gastos_fixos + gastos_variaveis
         sobra = renda - total_gastos
 
-        st.subheader("📊 Resumo Financeiro")
+        st.subheader("📊 Análise Estratégica")
 
         col1, col2, col3, col4 = st.columns(4)
 
@@ -304,7 +305,7 @@ def perfil_financeiro():
 
         with col3:
             st.metric(
-                "Sobra Mensal",
+                "Sobra Estratégica",
                 f"R$ {max(0, sobra):,.2f}",
                 delta=f"{'Positivo' if sobra > 0 else 'Negativo'}"
             )
@@ -316,7 +317,7 @@ def perfil_financeiro():
         # Dica personalizada
         st.markdown("---")
         dica = gerar_dica_perfil()
-        st.markdown(f"**💡 Dica da Nat:** {dica}")
+        st.markdown(f"**⚔️ Estratégia da Dina:** {dica}")
 
         # Informação adicional se idade foi fornecida
         if perfil.get("idade") and sobra is not None and sobra > 0:
@@ -326,11 +327,12 @@ def perfil_financeiro():
                 st.info(f"""
                 🎯 **Planejamento de Longo Prazo:**
 
-                Com sua sobra atual de **R$ {sobra:,.2f}/mês**, em **{anos_para_aposentadoria} anos**
-                (até os 65 anos), você poderia acumular aproximadamente **R$ {total_poupado:,.2f}**
-                considerando apenas a poupança, sem rendimentos.
+                Com sua sobra estratégica atual de **R$ {sobra:,.2f}/mês**, em **{anos_para_aposentadoria} anos**
+                (até os 65 anos), você pode acumular aproximadamente **R$ {total_poupado:,.2f}**
+                considerando apenas a poupança, sem investimentos.
 
-                **Dica da Nat:** Invista esse valor para fazer o dinheiro trabalhar para você!
+                **Estratégia da Dina:** Invista esse valor para fazer seu dinheiro trabalhar para você.
+                O tempo é seu maior aliado na batalha pela independência financeira!
                 """)
 
         # Gráfico simples
@@ -338,7 +340,7 @@ def perfil_financeiro():
             import pandas as pd
 
             df = pd.DataFrame({
-                'Categoria': ['Gastos Fixos', 'Gastos Variáveis', 'Sobra'],
+                'Categoria': ['Gastos Fixos', 'Gastos Variáveis', 'Sobra Estratégica'],
                 'Valor': [gastos_fixos, gastos_variaveis, max(0, sobra)]
             })
 
@@ -347,9 +349,9 @@ def perfil_financeiro():
 
 def simuladores_financeiros():
     """Aba de simuladores financeiros"""
-    st.header("📚 Simuladores Financeiros")
+    st.header("⚔️ Simuladores Estratégicos")
 
-    st.info("🧡 **Nota:** A Nat usa os dados do seu perfil financeiro para personalizar os cálculos.")
+    st.info("⚔️ **Nota da Dina:** Estou usando os dados do seu planejamento para criar simulações estratégicas personalizadas.")
 
     simulador = st.selectbox(
         "Escolha um simulador:",
@@ -357,7 +359,7 @@ def simuladores_financeiros():
     )
 
     if simulador == "Reserva de Emergência":
-        st.subheader("🏥 Simulador de Reserva de Emergência")
+        st.subheader("🛡️ Estratégia de Reserva de Emergência")
 
         perfil = obter_perfil()
 
@@ -385,29 +387,29 @@ def simuladores_financeiros():
                 value=gastos_padrao
             )
 
-        if st.button("📊 Calcular Reserva", type="primary"):
+        if st.button("⚔️ Calcular Reserva", type="primary"):
             if renda > 0 and gastos > 0:
                 resultado = calcular_reserva_emergencia(renda, gastos)
 
                 if "erro" in resultado:
                     st.error(resultado["erro"])
                 else:
-                    st.success(f"💰 Reserva Recomendada: **R$ {resultado['reserva_recomendada']:,.2f}**")
+                    st.success(f"🛡️ Reserva Estratégica: **R$ {resultado['reserva_recomendada']:,.2f}**")
                     st.markdown(resultado["explicacao"])
 
                     # Aviso educativo
                     st.markdown("""
                     <div class="warning-box">
-                        ⚠️ <strong>Aviso Importante:</strong> Esta simulação é apenas educativa e não
+                        ⚠️ <strong>Aviso Estratégico:</strong> Esta simulação é apenas educativa e não
                         leva em conta seu perfil completo. Para decisões financeiras importantes,
                         consulte um profissional qualificado.
                     </div>
                     """, unsafe_allow_html=True)
             else:
-                st.warning("Preencha todos os campos com valores maiores que zero.")
+                st.warning("Preencha todos os campos com valores estratégicos maiores que zero.")
 
     elif simulador == "Juros Compostos":
-        st.subheader("📈 Simulador de Juros Compostos")
+        st.subheader("📈 Estratégia de Juros Compostos")
 
         col1, col2, col3 = st.columns(3)
 
@@ -445,7 +447,7 @@ def simuladores_financeiros():
             value=0.0
         )
 
-        if st.button("📊 Calcular Juros Compostos", type="primary"):
+        if st.button("🚀 Calcular Crescimento", type="primary"):
             from modules.simulacoes import calcular_juros_compostos
 
             resultado = calcular_juros_compostos(
@@ -458,7 +460,7 @@ def simuladores_financeiros():
             if "erro" in resultado:
                 st.error(resultado["erro"])
             else:
-                st.success(f"💰 Valor Final: **R$ {resultado['valor_final']:,.2f}**")
+                st.success(f"💰 Valor Final Estratégico: **R$ {resultado['valor_final']:,.2f}**")
 
                 col1, col2, col3 = st.columns(3)
 
@@ -473,7 +475,7 @@ def simuladores_financeiros():
                     st.metric("Rendimento", f"{rendimento:.1f}%")
 
                 # Tabela mensal (últimos 6 meses)
-                st.markdown("#### 📋 Últimos Meses")
+                st.markdown("#### 📋 Evolução Mensal")
 
                 import pandas as pd
                 df = pd.DataFrame(resultado['tabela'][-6:])
@@ -481,14 +483,14 @@ def simuladores_financeiros():
 
                 st.markdown("""
                 <div class="warning-box">
-                    ℹ️ <strong>Educativo:</strong> Juros compostos são "juros sobre juros", como uma bola
-                    de neve. Quanto mais tempo deixa investir, maior o crescimento. Isso é apenas uma
-                    simulação, não uma recomendação de investimento.
+                    ℹ️ <strong>Estratégia:</strong> Juros compostos são sua arma secreta. Quanto mais tempo
+                    deixa investir, maior o crescimento. Isso é apenas uma simulação educativa,
+                    não uma recomendação de investimento.
                 </div>
                 """, unsafe_allow_html=True)
 
     elif simulador == "Aposentadoria":
-        st.subheader("🎯 Simulador de Aposentadoria")
+        st.subheader("🎯 Estratégia de Aposentadoria")
 
         perfil = obter_perfil()
 
@@ -535,7 +537,7 @@ def simuladores_financeiros():
             help="Retorno médio anual esperado dos investimentos"
         )
 
-        if st.button("🎯 Calcular Aposentadoria", type="primary"):
+        if st.button("🎯 Calcular Estratégia", type="primary"):
             # Regra dos 4%
             patrimonio_necessario = renda_desejada * 12 * 25  # 25 anos = 4% ao ano
 
@@ -548,19 +550,19 @@ def simuladores_financeiros():
             else:
                 poupanca_mensal = patrimonio_necessario / meses_poupar
 
-            st.success(f"🎯 **Patrimônio Necessário: R$ {patrimonio_necessario:,.2f}**")
+            st.success(f"🎯 **Patrimônio Estratégico: R$ {patrimonio_necessario:,.2f}**")
             st.info(f"""
-            📊 **Plano da Nat:**
+            📊 **Plano Estratégico da Dina:**
 
             Para atingir uma renda de **R$ {renda_desejada:,.2f}/mês** aos {idade_aposentadoria} anos,
-            considerando {anos_poupar} anos de poupança:
+            considerando {anos_poupar} anos de disciplina:
 
             • **Patrimônio alvo:** R$ {patrimonio_necessario:,.2f}
-            • **Poupança mensal necessária:** R$ {poupanca_mensal:,.2f}
+            • **Investimento mensal:** R$ {poupanca_mensal:,.2f}
             • **Total investido:** R$ {poupanca_mensal * meses_poupar:,.2f}
             • **Total em juros:** R$ {patrimonio_necessario - poupanca_mensal * meses_poupar:,.2f}
 
-            💡 **Dica da Nat:** Comece o quanto antes! O tempo é seu maior aliado.
+            ⚔️ **Estratégia da Dina:** Comece agora! A disciplina é sua maior arma.
             """)
 
             # Gráfico de crescimento
@@ -585,7 +587,7 @@ def simuladores_financeiros():
 
             st.markdown("""
             <div class="warning-box">
-                ℹ️ <strong>Educativo:</strong> Este simulador usa a regra dos 4%, uma estratégia comum
+                ℹ️ <strong>Estratégia:</strong> Este simulador usa a regra dos 4%, uma estratégia comum
                 para planejamento de aposentadoria. Assume que você viverá até os 90 anos e que seus
                 investimentos renderão a taxa especificada. Consulte um planejador financeiro para um
                 plano personalizado.
@@ -593,11 +595,11 @@ def simuladores_financeiros():
             """, unsafe_allow_html=True)
 
 
-def chat_com_nat():
-    """Aba de chat com IA DeepSeek - Nat"""
-    st.header("💬 Converse com a Nat")
+def chat_com_dina():
+    """Aba de chat com IA DeepSeek - Dina"""
+    st.header("💬 Converse com a Dina")
 
-    st.info("🧡 **Sobre a Nat:** Sou sua assistente de finanças personalizada! Uso seu perfil para dar respostas mais contextualizadas.")
+    st.info("⚔️ **Sobre a Dina:** Sou sua estrategista financeira. Vou ajudar você a traçar o melhor plano para suas finanças com disciplina e resiliência.")
 
     # Verifica se a API está configurada
     api_key = os.getenv("DEEPSEEK_API_KEY")
@@ -606,7 +608,7 @@ def chat_com_nat():
         st.warning("""
         ### ⚠️ Configure a API Key da DeepSeek
 
-        Para conversar com a Nat, você precisa configurar sua API Key:
+        Para conversar com a Dina, você precisa configurar sua API Key:
 
         1. Acesse: https://platform.deepseek.com/
         2. Crie sua conta e obtenha uma API Key
@@ -624,15 +626,15 @@ def chat_com_nat():
     # Exibe contexto do usuário
     perfil = obter_perfil()
     if perfil.get("renda_mensal"):
-        with st.expander("📊 Seu Contexto Financeiro"):
+        with st.expander("📊 Seu Contexto Estratégico"):
             contexto = formatar_contexto_para_chat(perfil)
             if perfil.get("idade"):
                 contexto += f"\n🎂 Idade: {perfil['idade']} anos"
             st.markdown(contexto)
 
-    # Mensagem de boas-vindas da Nat
+    # Saudação inicial da Dina
     if not st.session_state.chat_messages:
-        st.info("🧡 **Olá! Eu sou a Nat,** sua assistente de finanças. Pergunte-me qualquer coisa sobre finanças que eu te ajudo!")
+        st.info("⚔️ **Olá! Sou a Dina,** sua estrategista financeira. Estou aqui para te ajudar a traçar a melhor estratégia para sua vida financeira. **Por onde vamos começar?**")
 
     # Exibe histórico de mensagens
     for message in st.session_state.chat_messages:
@@ -646,9 +648,9 @@ def chat_com_nat():
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Gera resposta da Nat
+        # Gera resposta da Dina
         with st.chat_message("assistant"):
-            with st.spinner("🧡 A Nat está pensando..."):
+            with st.spinner("⚔️ A Dina está analisando sua estratégia..."):
                 resposta = responder_pergunta_chat(
                     prompt,
                     perfil,
@@ -665,9 +667,9 @@ def chat_com_nat():
 
     # Botão para limpar histórico
     if st.session_state.chat_messages:
-        if st.button("🗑️ Limpar Histórico do Chat"):
+        if st.button("🗑️ Limpar Histórico"):
             st.session_state.chat_messages = []
-            st.success("Histórico limpo! A Nat está pronta para uma nova conversa.")
+            st.success("Histórico limpo! Vamos traçar uma nova estratégia.")
             st.rerun()
 
 
@@ -675,7 +677,7 @@ def faq_inteligente():
     """Aba de FAQ inteligente"""
     st.header("📚 Perguntas Frequentes")
 
-    st.info("🧡 A Nat preparou respostas para as perguntas mais comuns sobre finanças!")
+    st.info("⚔️ A Dina preparou respostas estratégicas para as perguntas mais comuns sobre finanças!")
 
     # Sugestões de perguntas
     st.markdown("### 🔥 Perguntas Populares")
@@ -703,15 +705,15 @@ def faq_inteligente():
         placeholder="Ex: Como funciona a reserva de emergência?"
     )
 
-    if st.button("🔍 Perguntar", type="primary") or pergunta:
+    if st.button("⚔️ Perguntar", type="primary") or pergunta:
         if pergunta:
-            with st.spinner("🔍 A Nat está pesquisando..."):
+            with st.spinner("⚔️ A Dina está pesquisando..."):
                 perfil = obter_perfil()
                 resposta = responder_pergunta(pergunta, perfil)
 
                 st.markdown(f"**❓ Pergunta:** {pergunta}")
                 st.markdown("---")
-                st.markdown(f"**💡 Resposta da Nat:**\n\n{resposta}")
+                st.markdown(f"**⚔️ Resposta da Dina:**\n\n{resposta}")
 
                 # Limpa a pergunta após responder
                 if "pergunta_faq" in st.session_state:
