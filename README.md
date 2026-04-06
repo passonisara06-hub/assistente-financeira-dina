@@ -1,4 +1,4 @@
-# ⚔️ Dina - Sua Estrategista Financeira
+# 🎯 Dina - Sua Estrategista Financeira
 
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.56+-red)](https://streamlit.io/)
 [![Python](https://img.shields.io/badge/Python-3.12+-blue)](https://www.python.org/)
@@ -19,7 +19,7 @@ Dina é uma assistente financeira conversacional desenvolvida em Python com Stre
 - Orientações personalizadas baseadas no perfil
 - Visualizações gráficas do seu panorama financeiro
 
-### ⚔️ Simuladores Estratégicos
+### 🎯 Simuladores Estratégicos
 - **Reserva de Emergência:** Sua linha de defesa financeira
 - **Juros Compostos:** Veja seu dinheiro crescer com o tempo
 - **Aposentadoria:** Planeje sua independência financeira
@@ -104,7 +104,7 @@ dina-estrategista-financeira/
 
 ## 🎯 Principais Características
 
-### ⚔️ Personalidade Única
+### 🎯 Personalidade Única
 - **Nome:** Dina (inspirada em guerreira estratégica)
 - **Tom:** Direto, claro, confiante e acolhedor
 - **Abordagem:** Estratégica, focada em disciplina e resiliência
@@ -239,7 +239,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 <div align="center">
 
-**⚔️ Desenvolvido com disciplina para sua vitória financeira ⚔️**
+**🎯 Desenvolvido com disciplina para sua vitória financeira 🎯**
 
 *[Feito com estratégia e Python]*
 

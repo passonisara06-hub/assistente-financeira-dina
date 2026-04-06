@@ -27,7 +27,7 @@ load_dotenv()
 # Configuração da página
 st.set_page_config(
     page_title="Dina - Sua Estrategista Financeira",
-    page_icon="⚔️",
+    page_icon="🎯",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -124,7 +124,7 @@ def main():
     # Header da Dina
     st.markdown("""
     <div class="main-header">
-        <h1>⚔️ Dina - Sua Estrategista Financeira</h1>
+        <h1>🎯 Dina - Sua Estrategista Financeira</h1>
         <p>Sua aliada estratégica para conquistar seus objetivos financeiros | Powered by DeepSeek</p>
     </div>
     """, unsafe_allow_html=True)
@@ -163,13 +163,13 @@ def main():
         # Rodapé da Dina na sidebar
         st.divider()
         st.markdown("---")
-        st.markdown("### ⚔️ **Dina**")
+        st.markdown("### 🎯 **Dina**")
         st.caption("Estratégia e disciplina para suas finanças")
 
     # Tabs principais
     tab1, tab2, tab3, tab4 = st.tabs([
         "👤 Meu Planejamento Financeiro",
-        "⚔️ Simuladores Estratégicos",
+        "🎯 Simuladores Estratégicos",
         "💬 Converse com a Dina",
         "❓ FAQ Inteligente"
     ])
@@ -189,7 +189,7 @@ def main():
     # Rodapé
     st.markdown("""
     <div class="dina-footer">
-        <p>⚔️ <strong>Dina</strong> - Sua Estrategista Financeira | Disciplina e resiliência para sua vitória financeira</p>
+        <p>🎯 <strong>Dina</strong> - Sua Estrategista Financeira | Disciplina e resiliência para sua vitória financeira</p>
         <p><em>Lembre-se: As informações fornecidas são apenas educativas. Consulte um profissional para decisões financeiras importantes.</em></p>
     </div>
     """, unsafe_allow_html=True)
@@ -317,7 +317,7 @@ def perfil_financeiro():
         # Dica personalizada
         st.markdown("---")
         dica = gerar_dica_perfil()
-        st.markdown(f"**⚔️ Estratégia da Dina:** {dica}")
+        st.markdown(f"**🎯 Estratégia da Dina:** {dica}")
 
         # Informação adicional se idade foi fornecida
         if perfil.get("idade") and sobra is not None and sobra > 0:
@@ -349,9 +349,9 @@ def perfil_financeiro():
 
 def simuladores_financeiros():
     """Aba de simuladores financeiros"""
-    st.header("⚔️ Simuladores Estratégicos")
+    st.header("🎯 Simuladores Estratégicos")
 
-    st.info("⚔️ **Nota da Dina:** Estou usando os dados do seu planejamento para criar simulações estratégicas personalizadas.")
+    st.info("🎯 **Nota da Dina:** Estou usando os dados do seu planejamento para criar simulações estratégicas personalizadas.")
 
     simulador = st.selectbox(
         "Escolha um simulador:",
@@ -387,7 +387,7 @@ def simuladores_financeiros():
                 value=gastos_padrao
             )
 
-        if st.button("⚔️ Calcular Reserva", type="primary"):
+        if st.button("🎯 Calcular Reserva", type="primary"):
             if renda > 0 and gastos > 0:
                 resultado = calcular_reserva_emergencia(renda, gastos)
 
@@ -562,7 +562,7 @@ def simuladores_financeiros():
             • **Total investido:** R$ {poupanca_mensal * meses_poupar:,.2f}
             • **Total em juros:** R$ {patrimonio_necessario - poupanca_mensal * meses_poupar:,.2f}
 
-            ⚔️ **Estratégia da Dina:** Comece agora! A disciplina é sua maior arma.
+            🎯 **Estratégia da Dina:** Comece agora! A disciplina é sua maior arma.
             """)
 
             # Gráfico de crescimento
@@ -599,7 +599,7 @@ def chat_com_dina():
     """Aba de chat com IA DeepSeek - Dina"""
     st.header("💬 Converse com a Dina")
 
-    st.info("⚔️ **Sobre a Dina:** Sou sua estrategista financeira. Vou ajudar você a traçar o melhor plano para suas finanças com disciplina e resiliência.")
+    st.info("🎯 **Sobre a Dina:** Sou sua estrategista financeira. Vou ajudar você a traçar o melhor plano para suas finanças com disciplina e resiliência.")
 
     # Verifica se a API está configurada
     api_key = os.getenv("DEEPSEEK_API_KEY")
@@ -634,7 +634,7 @@ def chat_com_dina():
 
     # Saudação inicial da Dina
     if not st.session_state.chat_messages:
-        st.info("⚔️ **Olá! Sou a Dina,** sua estrategista financeira. Estou aqui para te ajudar a traçar a melhor estratégia para sua vida financeira. **Por onde vamos começar?**")
+        st.info("🎯 **Olá! Sou a Dina,** sua estrategista financeira. Estou aqui para te ajudar a traçar a melhor estratégia para sua vida financeira. **Por onde vamos começar?**")
 
     # Exibe histórico de mensagens
     for message in st.session_state.chat_messages:
@@ -650,7 +650,7 @@ def chat_com_dina():
 
         # Gera resposta da Dina
         with st.chat_message("assistant"):
-            with st.spinner("⚔️ A Dina está analisando sua estratégia..."):
+            with st.spinner("🎯 A Dina está analisando sua estratégia..."):
                 resposta = responder_pergunta_chat(
                     prompt,
                     perfil,
@@ -677,7 +677,7 @@ def faq_inteligente():
     """Aba de FAQ inteligente"""
     st.header("📚 Perguntas Frequentes")
 
-    st.info("⚔️ A Dina preparou respostas estratégicas para as perguntas mais comuns sobre finanças!")
+    st.info("🎯 A Dina preparou respostas estratégicas para as perguntas mais comuns sobre finanças!")
 
     # Sugestões de perguntas
     st.markdown("### 🔥 Perguntas Populares")
@@ -705,15 +705,15 @@ def faq_inteligente():
         placeholder="Ex: Como funciona a reserva de emergência?"
     )
 
-    if st.button("⚔️ Perguntar", type="primary") or pergunta:
+    if st.button("🎯 Perguntar", type="primary") or pergunta:
         if pergunta:
-            with st.spinner("⚔️ A Dina está pesquisando..."):
+            with st.spinner("🎯 A Dina está pesquisando..."):
                 perfil = obter_perfil()
                 resposta = responder_pergunta(pergunta, perfil)
 
                 st.markdown(f"**❓ Pergunta:** {pergunta}")
                 st.markdown("---")
-                st.markdown(f"**⚔️ Resposta da Dina:**\n\n{resposta}")
+                st.markdown(f"**🎯 Resposta da Dina:**\n\n{resposta}")
 
                 # Limpa a pergunta após responder
                 if "pergunta_faq" in st.session_state:
